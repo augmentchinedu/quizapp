@@ -1,4 +1,3 @@
 <template>
-  <div>Quiz App: Under Construction</div>
+  <router-view></router-view>
 </template>
-<script setup></script>
