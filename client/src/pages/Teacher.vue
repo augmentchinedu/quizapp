@@ -5,8 +5,8 @@
       <v-btn color="#8E24AA" append-icon="mdi-minus">Remove Subject</v-btn>
     </div>
 
-    <div class="grid grid-cols-3 gap-4">
-      <div v-for="i in 4" class="p-2 text-center">
+    <div class="flex flex-wrap justify-center gap-2">
+      <div v-for="i in 5" class="w-1/3 text-center">
         <img
           src="../assets/images/subject.jpg"
           alt=""
