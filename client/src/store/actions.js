@@ -25,7 +25,30 @@ function useActions() {
       .catch((err) => console.log(err));
   }
 
-  return { init };
+  function addSubject(subject) {
+    axios.get("/add-subject?name=" + subject).then(({ data }) => {
+      store.subjects.push(data);
+    });
+  }
+
+  async function deleteSubject(i) {
+    try {
+      let response = await axios.get(`/delete-subject/${i}`);
+      console.log(response);
+      if (response.data == true) store.subjects.splice(index, 1);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function isIDAvailable(name) {
+    name = name.trim().replaceAll(" ", "-").toLowerCase();
+    return axios.get("/check-id?id=" + name).then(({ data }) => {
+      return data;
+    });
+  }
+
+  return { init, deleteSubject, isIDAvailable, addSubject };
 }
 
 export { useActions };
