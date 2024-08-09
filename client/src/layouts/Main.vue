@@ -6,14 +6,20 @@
           <v-avatar color="#FFFFFF">QA</v-avatar>
         </template>
 
-        <v-app-bar-title>Augment's Quiz App</v-app-bar-title>
+        <v-app-bar-title>{{ route.name }}</v-app-bar-title>
       </v-app-bar>
 
       <v-main>
-        <v-container class="grid items-center h-full">
+        <v-container class="h-full">
           <router-view></router-view>
         </v-container>
       </v-main>
     </v-app>
   </v-responsive>
 </template>
+
+<script setup>
+import { useRoute } from "vue-router";
+const route = useRoute();
+console.log(route.name);
+</script>

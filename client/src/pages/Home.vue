@@ -1,18 +1,20 @@
 <template>
-  <div id="home" class="flex flex-col justify-center items-center gap-4">
-    <RouterLink
-      :to="category.path"
-      v-for="(category, i) in categories"
-      :key="i"
-    >
-      <div class="grid gap-2 text-center">
-        <img
-          :src="'./assets/images/' + category.name + '.jpg'"
-          class="mx-auto rounded-md"
-        />
-        <strong class="capitalize">{{ category.name }}</strong>
+  <div class="grid items-center h-full">
+    <div id="home" class="flex flex-col justify-center items-center gap-4">
+      <div v-for="(category, i) in categories" :key="i">
+        <div class="grid gap-2 text-center">
+          <router-link :to="category.path">
+            <div>
+              <img
+                :src="'./assets/images/' + category.name + '.jpg'"
+                class="mx-auto rounded-md min-w-1/2 max-w-1/2"
+              />
+              <strong class="capitalize">{{ category.name }}</strong>
+            </div>
+          </router-link>
+        </div>
       </div>
-    </RouterLink>
+    </div>
   </div>
 </template>
 

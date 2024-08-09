@@ -1,4 +1,5 @@
 const path = require("path");
+const { init } = require("./db");
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
@@ -23,4 +24,6 @@ app.all("*", (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Server Started on Port ${port}`));
+init().then(() => {
+  app.listen(port, () => console.log(`Server Started on Port ${port}`));
+});
