@@ -1,1 +1,0 @@
-import{_ as n,c as o,o as t,a as e}from"./index-CfrXXltq.js";const c={},s=e("h1",null,"Main Content",-1),_=e("div",null,"Quiz App: Under Construction",-1),r=[s,_];function a(i,d){return t(),o("div",null,r)}const u=n(c,[["render",a]]);export{u as default};
